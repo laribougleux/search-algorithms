@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta content="Page description" name="description">
+
+    <link href="style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <title>Title page</title>
+
+<body>
+
+<div class="left">
+    <div id="algorithm_panel" class="panel right_panel menu">
+        <header><h2 class="header_title">Menu</h2></header>
+
+        <div class="accordion">
+            <h3 id="algorithm-header"><a href="#">Algorithm</a></h3>
+            <div id="algorithm_section" class="finder_section">
+
+                <div id="algorithm" class="sub_options">
+                    <input type="radio" name="algorithm" value="a-star" checked />
+                    <label class="option_label">A*</label> <br>
+                    <input type="radio" name="algorithm" value="ida-star"/>
+                    <label class="option_label">IDA*</label> <br>
+                    <input type="radio" name="algorithm" value="greedy"/>
+                    <label class="option_label">Greedy search</label> <br>
+                    <input type="radio" name="algorithm" value="uniform-cost"/>
+                    <label class="option_label">Uniform cost search</label> <br>
+                    <input type="radio" name="algorithm" value="breadth-first"/>
+                    <label class="option_label">Breadth-first-search</label> <br>
+                    <input type="radio" name="algorithm" value="best-first"/>
+                    <label class="option_label">Best-first-search</label> <br>
+                    <input type="radio" name="algorithm" value="dijkstra"/>
+                    <label class="option_label">Dijkstra</label> <br>
+                    <input type="radio" name="algorithm" value="depth-first"/>
+                    <label class="option_label">Depth first search</label> <br>
+                </div>
+            </div>
+
+            <h3 id="heuristic-header"><a href="#">Heuristic</a></h3>
+            <div id="heuristic_section" class="finder_section">
+
+                <div id="heuristic" class="sub_options">
+                    <input type="radio" name="heuristic" value="manhattan" checked />
+                    <label class="option_label">Manhattan</label> <br>
+                    <input type="radio" name="heuristic" value="euclidean"/>
+                    <label class="option_label">Euclidean</label> <br>
+                    <input type="radio" name="heuristic" value="octile"/>
+                    <label class="option_label">Octile</label> <br>
+                    <input type="radio" name="heuristic" value="chebyshev"/>
+                    <label class="option_label">Chebyshev</label> <br>
+                </div>
+            </div>
+
+            <h3 id="options-header"><a href="#">Options</a></h3>
+            <div id="options_section" class="finder_section">
+
+                <div class="optional sub_options">
+                    <input type="checkbox" class="allow_diagonal" checked>
+                    <label class="option_label">Allow Diagonal</label> <br>
+                    <input type="checkbox" class="bi-directional">
+                    <label class="option_label">Bi-directional</label> <br>
+                    <input type="checkbox" class="dont_cross_corners">
+                    <label class="option_label">Don't Cross Corners</label> <br>
+                </div>
+            </div>
+
+        </div> <!-- .accordion -->
+    </div> <!-- #algorithm_panel -->
+</div>
+
+<div class="right">
+    <div class="centered">
+        <h2>John Doe</h2>
+        <p>Some text here too.</p>
+    </div>
+</div>
