@@ -11,6 +11,8 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
+    <script src="script.js"></script>
 
     <title>Title page</title>
 
@@ -18,33 +20,41 @@
 
 <div class="left">
     <div id="algorithm_panel" class="panel right_panel menu">
-        <header><h2 class="header_title">Menu</h2></header>
+        <header><h1 class="header_title">Menu</h1></header><br><br>
 
         <div class="accordion">
-            <h3 id="algorithm-header"><a href="#">Algorithm</a></h3>
-            <div id="algorithm_section" class="finder_section">
+            <h3 id="uninformed-algorithm-header"><a href="#">Uninformed algorithms:</a></h3>
+            <div id="uninformed-algorithm_section" class="finder_section">
 
-                <div id="algorithm" class="sub_options">
-                    <input type="radio" name="algorithm" value="a-star" checked />
-                    <label class="option_label">A*</label> <br>
-                    <input type="radio" name="algorithm" value="ida-star"/>
-                    <label class="option_label">IDA*</label> <br>
-                    <input type="radio" name="algorithm" value="greedy"/>
-                    <label class="option_label">Greedy search</label> <br>
-                    <input type="radio" name="algorithm" value="uniform-cost"/>
-                    <label class="option_label">Uniform cost search</label> <br>
+                <div id="uninformed-algorithm" class="sub_options">
                     <input type="radio" name="algorithm" value="breadth-first"/>
-                    <label class="option_label">Breadth-first-search</label> <br>
-                    <input type="radio" name="algorithm" value="best-first"/>
-                    <label class="option_label">Best-first-search</label> <br>
-                    <input type="radio" name="algorithm" value="dijkstra"/>
-                    <label class="option_label">Dijkstra</label> <br>
+                    <span title="Breadth-first search is a simple strategy in which the root node is expanded first, then all the successors of the root node are expanded next, then their successors, and so on. In general, all the nodes are expanded at a given depth in the search tree before any nodes at the next level are expanded." class="option_label">Breadth-first</span> <br>
+                    <input type="radio" name="algorithm" value="uniform-cost"/>
+                    <span title="Uniform-cost search expands the node n with the lowest path cost g(n). This is done by storing the frontier as a priority queue ordered by g." class="option_label">Uniform-cost</span> <br>
                     <input type="radio" name="algorithm" value="depth-first"/>
-                    <label class="option_label">Depth first search</label> <br>
+                    <span title="Depth-first search always expands the deepest node in the current frontier of the search tree. The search proceeds immediately to the deepest level of the search tree, where the nodes have no successors. As those nodes are expanded, they are dropped from the frontier, so then the search “backs up” to the next deepest node that still has unexplored successors." class="option_label">Depth-first</span> <br>
+                </div>
+            </div>
+            <br>
+
+            <h3 id="informed-algorithm-header"><a href="#">Informed algorithms:</a></h3>
+            <div id="informed-algorithm_section" class="finder_section">
+
+                <div id="informed-algorithm" class="sub_options">
+                    <input type="radio" name="algorithm" value="a-star" checked />
+                    <span title="A∗ evaluates nodes by combining g(n), the cost to reach the node, and h(n), the cost to get from the node to the goal:
+f(n) = g(n) + h(n) .
+Since g(n) gives the path cost from the start node to node n, and h(n) is the estimated cost of the cheapest path from n to the goal, we have f(n) = estimated cost of the cheapest solution through n. It first tries the node with the lowest value of g(n) + h(n). Provided that the heuristic function h(n) satisfies certain conditions, A∗ search is both complete and optimal." class="option_label">A*</span> <br>
+                    <input type="radio" name="algorithm" value="ida-star"/>
+                    <span title="Iterative-deepening-A* works as follows: at each iteration, perform a depth-first search, cutting off a branch when its total cost
+f(n)=g(n)+h(n)}f(n)=g(n)+h(n)
+exceeds a given threshold. This threshold starts at the estimate of the cost at the initial state, and increases for each iteration of the algorithm. At each iteration, the threshold used for the next iteration is the minimum cost of all values that exceeded the current threshold. As in A*, the heuristic has to have particular properties to guarantee optimality." class="option_label">IDA*</span> <br>
+                    <input type="radio" name="algorithm" value="greedy"/>
+                    <span title="Greedy best-first search8 tries to expand the node that is closest to the goal, on the grounds that this is likely to lead to a solution quickly. Thus, it evaluates nodes by using just the heuristic function; that is, f(n) = h(n)." class="option_label">Greedy best-first</span> <br>
                 </div>
             </div>
 
-            <h3 id="heuristic-header"><a href="#">Heuristic</a></h3>
+            <!-- <h3 id="heuristic-header"><a href="#">Heuristic</a></h3>
             <div id="heuristic_section" class="finder_section">
 
                 <div id="heuristic" class="sub_options">
@@ -70,15 +80,22 @@
                     <input type="checkbox" class="dont_cross_corners">
                     <label class="option_label">Don't Cross Corners</label> <br>
                 </div>
-            </div>
+            </div> -->
 
         </div> <!-- .accordion -->
     </div> <!-- #algorithm_panel -->
 </div>
 
 <div class="right">
-    <div class="centered">
-        <h2>John Doe</h2>
-        <p>Some text here too.</p>
+    <div id="top">
+        <header><h2 class="resolution_before">RESOLUTION WILL APPEAR HERE ONCE GRAPH IS SENT</h2> </header>
+        <header><h2 class="resolution_after">Resolution steps:</h2></header><br><br>
+
     </div>
+    <div id="bottom">
+        <canvas id="myCanvas">
+            Sorry, your browser does not support HTML5 canvas technology.
+        </canvas>
+    </div>
+
 </div>
